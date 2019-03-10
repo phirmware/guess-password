@@ -1,0 +1,137 @@
+body{
+    background: black;
+    color: white;
+}
+
+.invalid{
+    color: darkslategrey;
+    font-size: 15px;
+}
+.invalid:hover{
+    color: darkslategrey !important;
+    font-size: 15px !important;
+}
+
+.correct{
+    color: greenyellow;
+    border: 1px solid rgb(228, 228, 222);
+    border-radius: 8px;
+}
+
+.item-1{
+    grid-area: header;
+    text-align: center;
+    color: azure;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.item-2{
+    grid-area: main;
+    width: 40%;
+    margin: 0px auto;
+    background: transparent;
+    border: 2px solid lightgreen;
+    border-radius: 8px;
+    color: white;
+    font-weight: bolder;
+}
+
+.item-2:hover{
+    background: lightgreen;
+    color: black;
+    border: 2px solid white;
+}
+
+.start{
+    display: none;
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    transition-delay: 1s;
+    transition-duration: 1s;
+    grid-template-rows: 100px 50px;
+    grid-template-areas: 
+    ". header ."
+    ". main ."
+}
+
+.game-item-1{
+    grid-area: gameHead;
+    text-align: center;
+    color: azure;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.game-item-2{
+    grid-area: gameList;
+    color: rgb(24, 233, 24);
+    list-style: none;
+    transition: 1s;
+    text-align: center;
+    font-weight: bolder;
+    padding: 10px 10px;
+    line-height: 40px;
+    margin-top: -40px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: monospace;
+}
+.game-item-2>li:hover{
+    font-size: 22px;
+    cursor: pointer;
+    color: rgb(193, 241, 18);
+    transition:.5s;
+}
+
+
+.game-item-3{
+    grid-area: gameBtn;
+    width: 40%;
+    margin: 0px auto;
+    background: transparent;
+    border: 2px solid lightgreen;
+    border-radius: 8px;
+    color: white;
+    font-weight: bolder;
+}
+.game-item-3:hover{
+    background: lightgreen;
+    color: black;
+    border: 2px solid white;
+}
+
+.game{
+    display: grid;
+    grid-column-gap: 0px;
+    grid-template-rows: 200px auto 100px;
+    grid-template-areas: 
+    ". gameHead ."
+    ". gameList ."
+    ". gameBtn ."
+}
+
+@media(max-width:550px){
+    .game-item-1{
+        font-size: 25px;
+    }
+    .game-item-2{
+        font-size: 15px;
+    }
+    .game-item-2>li:hover{
+        transition: none;
+        font-size: 15px;
+    }
+    .correct:hover{
+        font-size:10px !important;
+    }
+    .correct{
+        font-size: 10px;
+    }
+    .invalid{
+        font-size: 10px;
+    }
+    .invalid:hover{
+        font-size: 10px !important;  
+    }
+}
