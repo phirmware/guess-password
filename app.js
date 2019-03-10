@@ -14,7 +14,7 @@ var chosenWordsList;
 var chosenWords = [];
 var chosenPassword = '';
 var trials = 0;
-var maxTrials = 3;
+var maxTrials = 5;
 
 
 // chooses words and selects the password
@@ -24,7 +24,7 @@ function startGame() {
     gameEnv.style.display = "grid";
 
     // pick 7 random letters from words
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         var idx = Math.floor(Math.random() * words.length);
         // Push the chosen letters into chosenWords array
         chosenWords.push(words[idx]);
@@ -57,7 +57,7 @@ function playGame(words) {
             trials += 1;
             document.getElementById('trials').textContent =  `${maxTrials - trials}`
             // Set condition for maximum trials
-            if(trials > 3){
+            if(trials > maxTrials){
                 document.getElementById('trials').textContent =  `No`;
                 return;
             }
@@ -76,7 +76,7 @@ function playGame(words) {
             words[i].textContent = `${correctPassword} -----> Your Guess is Correct`;
 
             // Set trials to 4
-            trials = 4;
+            trials = maxTrials + 1;
             document.getElementById('trials').textContent =  `No`;
         });
     }
